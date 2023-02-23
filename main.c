@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:02:01 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/02/23 19:32:53 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:40:22 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,19 @@ int	main(int ac, char **av)
 	if (ft_check_duplicates(stack_a) == true)
 		exit(EXIT_FAILURE);
 
-	// ft_push_b(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_push_b(&stack_a, &stack_b);
+	ft_reverse_rotate_b(&stack_b);
 	// ft_rotate_b(&stack_b);
 	// ft_swap_a(&stack_b);
 	// ft_push_a(&stack_a, &stack_b);
 	// ft_push_a(&stack_a, &stack_b);
-	ft_reverse_rotate_a(&stack_a);
-	ft_reverse_rotate_a(&stack_a);
-	ft_swap_a(&stack_a);
-	ft_rotate_a(&stack_a);
-	ft_push_b(&stack_a, &stack_b);
+	// ft_reverse_rotate_a(&stack_a);
+	// ft_reverse_rotate_a(&stack_a);
+	// ft_swap_a(&stack_a);
+	// ft_rotate_a(&stack_a);
+	// ft_push_b(&stack_a, &stack_b);
 	while (stack_a != NULL)
 	{
 		printf("%d\n", *(int *)stack_a->content);

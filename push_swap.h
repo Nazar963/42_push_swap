@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:13 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/02/23 09:57:01 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:39:28 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_swap_b(t_list **stack_b);
 void	ft_rotate_a(t_list **stack_a);
 void	ft_rotate_b(t_list **stack_b);
 void	ft_reverse_rotate_a(t_list **stack_a);
+void	ft_reverse_rotate_b(t_list **stack_b);
 
 bool	ft_check_duplicates(t_list *list);
 

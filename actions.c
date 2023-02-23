@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:47:38 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/02/23 10:01:06 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:38:41 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,37 @@ void	ft_reverse_rotate_a(t_list **stack_a)
 	temp_a->next = NULL;
 	last_node = ft_lstnew(value);
 	ft_lstadd_front(stack_a, last_node);
+}
+
+void	ft_reverse_rotate_b(t_list **stack_b)
+{
+	int		size;
+	t_list	*temp_b;
+	t_list	*last_node;
+	int		*value;
+	
+	value = (int *)malloc(sizeof(int));
+	if (!value)
+		return ;
+	size = ft_lstsize(*stack_b);
+	temp_b = *stack_b;
+	while (size - 1 > 0)
+	{
+		temp_b = temp_b->next;
+		size--;
+	}
+	value = (int *)temp_b->content;
+	temp_b = NULL;
+	temp_b = *stack_b;
+	size = 0;
+	size = ft_lstsize(*stack_b);
+	while (size - 2 > 0)
+	{
+		temp_b = temp_b->next;
+		size--;
+	}
+	printf("value%d\n", *(int *)temp_b->content);
+	temp_b->next = NULL;
+	last_node = ft_lstnew(value);
+	ft_lstadd_front(stack_b, last_node);
 }
