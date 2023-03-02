@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:58:14 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/03 15:31:05 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:37:20 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char		*ft_strdup(const char *s);
 //                                 <stdlib.h>                                 */
 // -------------------------------------------------------------------------- */
 // function converts the initial portion of the string pointed to by nptr to int
-int			ft_atoi(const char *nptr);
+long int			ft_atoi(const char *nptr);
 // allocates memory for an array of nmemb elements of size bytes each and
 // returns a pointer to the allocated memory.  The memory is set to zero
 void		*ft_calloc(size_t nmemb, size_t size);

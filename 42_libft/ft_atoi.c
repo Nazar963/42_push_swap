@@ -6,17 +6,17 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:26:58 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/03 15:31:18 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:38:04 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
 
-int	ft_atoi(const char *nptr)
+long int	ft_atoi(const char *nptr)
 {
 	int			i;
-	long int	res;
+	long long int	res;
 	int			sign;
 
 	i = 0;

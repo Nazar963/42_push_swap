@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/04 12:25:27 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/01 17:30:12 by naal-jen         ###   ########.fr       */
+/*   Created: 2023/02/28 12:56:08 by naal-jen          #+#    #+#             */
+/*   Updated: 2023/02/28 12:56:27 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_free(char **str)
 {
-	t_list	*temp1;
+	int	i;
 
-	temp1 = *lst;
-	if (!*lst)
-		return ;
-	while (*lst)
+	i = 0;
+	while (str[i])
 	{
-		temp1 = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = temp1;
+		free(str[i]);
+		str[i] = NULL;
+		i++;
 	}
-	*lst = NULL;
+	free(str);
 }

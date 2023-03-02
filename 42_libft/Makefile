@@ -49,7 +49,7 @@ BON = lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear\
 BONFC = $(addprefix ft_,$(addsuffix .c, $(BON)))
 BONO = $(BONFC:.c=.o)
 
-all: $(NAME)
+all: $(NAME) bonus
 
 $(NAME): $(MANO)
 	$(AR) $(ARF) $@ $^
