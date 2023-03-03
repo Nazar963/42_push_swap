@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 08:58:21 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/02/28 17:23:09 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:54:54 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void radix_sort(t_list **stack_a, t_list **stack_b)
 		while (--size)
 		{
 			if (*(int *)((*stack_a)->content) & (1 << i))
-				ft_rotate_a(stack_a);
+				ft_rotate_a(stack_a, 0);
 			else
 				ft_push_b(stack_a, stack_b);
 		}

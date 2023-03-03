@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:13 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/02 08:50:28 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:11:12 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,33 @@ typedef struct s_loco
 //--------------- create_list.c ----------------
 void	ft_create_list(char **av, t_list **stack_a);
 void	ft_create_lists(int ac, char **av, t_list **stack_a, t_loco *loco);
+int	binary_search(int a[], int e, int l, int r);
+void	quick_sort(int arr[], int left, int right);
 
-//--------------- actions.c --------------------
-void	ft_push_b(t_list **stack_a, t_list **stack_b);
+//--------------- create_list_helper.c ---------
+void	swap(int *arr, int i, int j);
+int	*ft_copy_nums(int i, char **nums, int *arr, long int *new_num);
+void	ft_add_to_list(t_list **stack_a, int size, long int *new_num, int *arr);
+void	copy_nums(int i, char **av, int *arr, t_loco *loco);
+
+//--------------- push.c --------------------
 void	ft_push_a(t_list **stack_a, t_list **stack_b);
-void	ft_swap_a(t_list **stack_a);
-void	ft_swap_b(t_list **stack_b);
-void	ft_rotate_a(t_list **stack_a);
-void	ft_rotate_b(t_list **stack_b);
-void	ft_reverse_rotate_a(t_list **stack_a);
-void	ft_reverse_rotate_b(t_list **stack_b);
+void	ft_push_b(t_list **stack_a, t_list **stack_b);
+
+//--------------- swap.c --------------------
+void	ft_swap_a(t_list **stack_a, int print);
+void	ft_swap_b(t_list **stack_b, int print);
+void	ft_ss(t_list **stack_a, t_list **stack_b);
+
+//--------------- rotate.c ------------------
+void	ft_rotate_a(t_list **stack_a, int print);
+void	ft_rotate_b(t_list **stack_b, int print);
+void	ft_rr(t_list **stack_a, t_list **stack_b);
+
+//--------------- reverse_rotate.c ----------
+void	ft_reverse_rotate_a(t_list **stack_a, int print);
+void	ft_reverse_rotate_b(t_list **stack_b, int print);
+void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 //--------------- checks.c ---------------------
 int	ft_check_if_num(int ac, char **av);

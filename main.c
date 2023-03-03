@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:02:01 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/02 09:51:27 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:18:50 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int	hash(int key)
 
 bool	ft_check_duplicates_two(int ac, char **av)
 {
-	bool	hash_table[HASH_TABLE_SIZE];
-	int		i;
+	bool		hash_table[HASH_TABLE_SIZE];
+	int			i;
 	long long	num;
-	int		key;
+	int			key;
+
 	i = -1;
 	while (++i < HASH_TABLE_SIZE)
 		hash_table[i] = false;
@@ -35,40 +36,35 @@ bool	ft_check_duplicates_two(int ac, char **av)
 			return (false);
 		hash_table[key] = true;
 	}
-	return true;
+	return (true);
 }
 
 bool	ft_check_duplicates_one(char **av)
 {
-	bool	hash_table[HASH_TABLE_SIZE];
-	char	**str;
-	int		i;
-	int		size;
+	bool		hash_table[HASH_TABLE_SIZE];
+	char		**str;
+	int			i;
 	long long	num;
-	int		key;
+	int			key;
 
 	i = -1;
 	while (++i < HASH_TABLE_SIZE)
 		hash_table[i] = false;
 	str = ft_split(av[1], ' ');
-	i = 0;
-	while (str[i])
-		i++;
-	size = i;
 	i = -1;
-	while (++i < size)
+	while (str[++i])
 	{
 		num = ft_atoi(str[i]);
 		key = hash(num);
 		if (hash_table[key])
 		{
 			ft_free(str);
-			return false;
+			return (false);
 		}
 		hash_table[key] = true;
 	}
 	ft_free(str);
-    return true;
+	return (true);
 }
 
 static int	ft_check_duplicates(int ac, char **av)
@@ -91,31 +87,51 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	loco = (t_loco *)malloc(sizeof(t_loco));
-	if (!loco)
-		exit(EXIT_FAILURE);
 	if (ac < 2)
 		exit(EXIT_FAILURE);
 	else if (ac == 2)
 		ft_create_list(av, &stack_a);
 	else if (ac > 2)
+	{
+		loco = (t_loco *)malloc(sizeof(t_loco));
+		if (!loco)
+			exit(EXIT_FAILURE);
 		ft_create_lists(ac, av, &stack_a, loco);
+	}
 	if (!ft_check_if_num(ac, av) || !ft_check_duplicates(ac, av))
 	{
 		ft_putstr_fd("Error\n", 2);
+		ft_lstclear(&stack_a, &free);
+		if (ac > 2)
+			free(loco);
 		exit(EXIT_FAILURE);
 	}
 	if (!ft_check_if_sorted(ac, av))
 	{
 		ft_lstclear(&stack_a, &free);
+		free(loco);
 		exit(EXIT_FAILURE);
 	}
 	if (ft_lstsize(stack_a) <= 5)
 		sort_5_numbers(&stack_a, &stack_b);
 	else if (ft_lstsize(stack_a) > 5)
 		radix_sort(&stack_a, &stack_b);
-
-
+		
+	// ft_push_b(&stack_a, &stack_b);
+	// ft_push_b(&stack_a, &stack_b);
+	// ft_push_b(&stack_a, &stack_b);
+	// ft_swap_a(&stack_a, 0);
+	// ft_swap_b(&stack_b, 0);
+	// ft_ss(&stack_a, &stack_b);
+	// ft_rotate_a(&stack_a, 0);
+	// ft_rotate_b(&stack_b, 0);
+	// ft_rr(&stack_a, &stack_b);
+	// ft_reverse_rotate_a(&stack_a, 0);
+	// ft_reverse_rotate_b(&stack_a, 0);
+	// ft_rrr(&stack_a, &stack_b);
+	// ft_push_a(&stack_a, &stack_b);
+	// ft_push_a(&stack_a, &stack_b);
+	// ft_push_a(&stack_a, &stack_b);
 	// while (stack_a != NULL)
 	// {
 	// 	printf("%d\n", *(int *)stack_a->content);
@@ -133,7 +149,8 @@ int	main(int ac, char **av)
 	// ft_lstclear(&stack_a, &free);
 	// ft_free_list(&stack_a);
 
-	free(loco);
 	ft_lstclear(&stack_a, &free);
+	if (ac > 2)
+		free(loco);
 	return (0);
 }
