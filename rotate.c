@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 21:14:00 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/02 22:34:22 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:02:34 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ void	ft_rr(t_list **stack_a, t_list **stack_b)
 	ft_rotate_b(stack_b, 1);
 	ft_putstr_fd("rr\n", 1);
 }
-

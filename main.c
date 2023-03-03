@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:02:01 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/03 10:18:50 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:54:12 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool	ft_check_duplicates_one(char **av)
 	return (true);
 }
 
-static int	ft_check_duplicates(int ac, char **av)
+int	ft_check_duplicates(int ac, char **av)
 {
 	int	res;
 
@@ -98,59 +98,12 @@ int	main(int ac, char **av)
 			exit(EXIT_FAILURE);
 		ft_create_lists(ac, av, &stack_a, loco);
 	}
-	if (!ft_check_if_num(ac, av) || !ft_check_duplicates(ac, av))
-	{
-		ft_putstr_fd("Error\n", 2);
-		ft_lstclear(&stack_a, &free);
-		if (ac > 2)
-			free(loco);
-		exit(EXIT_FAILURE);
-	}
-	if (!ft_check_if_sorted(ac, av))
-	{
-		ft_lstclear(&stack_a, &free);
-		free(loco);
-		exit(EXIT_FAILURE);
-	}
+	main_helper(ac, av, &stack_a, loco);
 	if (ft_lstsize(stack_a) <= 5)
 		sort_5_numbers(&stack_a, &stack_b);
 	else if (ft_lstsize(stack_a) > 5)
 		radix_sort(&stack_a, &stack_b);
-		
-	// ft_push_b(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
-	// ft_push_b(&stack_a, &stack_b);
-	// ft_swap_a(&stack_a, 0);
-	// ft_swap_b(&stack_b, 0);
-	// ft_ss(&stack_a, &stack_b);
-	// ft_rotate_a(&stack_a, 0);
-	// ft_rotate_b(&stack_b, 0);
-	// ft_rr(&stack_a, &stack_b);
-	// ft_reverse_rotate_a(&stack_a, 0);
-	// ft_reverse_rotate_b(&stack_a, 0);
-	// ft_rrr(&stack_a, &stack_b);
-	// ft_push_a(&stack_a, &stack_b);
-	// ft_push_a(&stack_a, &stack_b);
-	// ft_push_a(&stack_a, &stack_b);
-	// while (stack_a != NULL)
-	// {
-	// 	printf("%d\n", *(int *)stack_a->content);
-	// 	stack_a = stack_a->next;
-	// }
-	// printf("stack_a\n");
-	// // looping through the list getting the address and not the content "value" of the node
-	// while (stack_b != NULL)
-	// {
-	// 	printf("%d\n", *(int *)stack_b->content);
-	// 	stack_b = stack_b->next;
-	// }
-	// printf("stack_b\n");
-	
-	// ft_lstclear(&stack_a, &free);
-	// ft_free_list(&stack_a);
-
 	ft_lstclear(&stack_a, &free);
 	if (ac > 2)
 		free(loco);
-	return (0);
 }

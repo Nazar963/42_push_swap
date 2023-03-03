@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:55:13 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/03 10:11:12 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:38:25 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,21 @@ typedef struct s_loco
 	long int	*value;
 }	t_loco;
 
+//--------------- main.c ------------------------------
+int		ft_check_duplicates(int ac, char **av);
+
+//--------------- main_helper.c -----------------------
+void	main_helper(int ac, char **av, t_list **stack_a, t_loco *loco);
+
 //--------------- create_list.c ----------------
 void	ft_create_list(char **av, t_list **stack_a);
 void	ft_create_lists(int ac, char **av, t_list **stack_a, t_loco *loco);
-int	binary_search(int a[], int e, int l, int r);
+int		binary_search(int a[], int e, int l, int r);
 void	quick_sort(int arr[], int left, int right);
 
 //--------------- create_list_helper.c ---------
 void	swap(int *arr, int i, int j);
-int	*ft_copy_nums(int i, char **nums, int *arr, long int *new_num);
+int		*ft_copy_nums(int i, char **nums, int *arr, long int *new_num);
 void	ft_add_to_list(t_list **stack_a, int size, long int *new_num, int *arr);
 void	copy_nums(int i, char **av, int *arr, t_loco *loco);
 
@@ -60,22 +66,15 @@ void	ft_reverse_rotate_b(t_list **stack_b, int print);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 //--------------- checks.c ---------------------
-int	ft_check_if_num(int ac, char **av);
-// int	ft_check_if_sorted(t_list **stack_a);
-int	ft_check_if_sorted(int ac, char **av);
+int		ft_check_if_num(int ac, char **av);
+int		ft_check_if_sorted(int ac, char **av);
 
 //--------------- sort_5.c -------------
-// void	ft_insertion_sort(t_list **stack_a);
-void sort_5_numbers(t_list **stack_a, t_list **stack_b);
+void	sort_5_numbers(t_list **stack_a, t_list **stack_b);
 
 //--------------- radix_sort.c -----------------
-void radix_sort(t_list **stack_a, t_list **stack_b);
-
+void	radix_sort(t_list **stack_a, t_list **stack_b);
 
 //--------------- ft_free.c -------------------
 void	ft_free(char **str);
-
-
-
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 08:58:21 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/03 10:54:54 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:01:37 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 static int	countbits(int num)
 {
-	int count = 1;
+	int	count;
+
+	count = 1;
 	while (num && count++)
 		num >>= 1;
 	return (count - 1);
 }
 
-void radix_sort(t_list **stack_a, t_list **stack_b)
+void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 	int	i;

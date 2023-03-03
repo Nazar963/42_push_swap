@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 21:14:29 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/02 22:41:04 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:02:18 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_reverse_rotate_a(t_list **stack_a, int print)
 {
-	t_list *temp;
+	t_list	*temp;
 	t_list	*last_node;
 	int		size;
 
@@ -34,7 +34,7 @@ void	ft_reverse_rotate_a(t_list **stack_a, int print)
 
 void	ft_reverse_rotate_b(t_list **stack_b, int print)
 {
-	t_list *temp;
+	t_list	*temp;
 	t_list	*last_node;
 	int		size;
 

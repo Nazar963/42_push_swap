@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:26:58 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/02/24 20:38:04 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:41:13 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 long int	ft_atoi(const char *nptr)
 {
-	int			i;
+	int				i;
 	long long int	res;
-	int			sign;
+	int				sign;
 
 	i = 0;
 	res = 0;
