@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:56:53 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/03 10:09:41 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/03/05 08:09:49 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,15 @@ int	binary_search(int a[], int e, int l, int r)
 		return (binary_search(a, e, mid + 1, r));
 }
 
+static void	helper(int size, char **nums)
+{
+	if (size == 1)
+	{
+		ft_free(nums);
+		exit(EXIT_FAILURE);
+	}
+}
+
 void	ft_create_list(char **av, t_list **stack_a)
 {
 	char		**nums;
@@ -66,6 +75,7 @@ void	ft_create_list(char **av, t_list **stack_a)
 	nums = ft_split(av[1], ' ');
 	while (nums[size])
 		size++;
+	helper(size, nums);
 	arr = (int *)malloc(sizeof(int) * size);
 	new_num = (long int *)malloc(sizeof(long int) * size);
 	if (!new_num || !arr)
