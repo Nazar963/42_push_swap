@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:12:38 by naal-jen          #+#    #+#             */
-/*   Updated: 2023/03/03 19:51:58 by naal-jen         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:01:10 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	sort_3_numbers(t_list **stack_a)
 
 	tmp = *(int *)(*stack_a)->content;
 	tmp_n = *(int *)(*stack_a)->next->content;
-	if (tmp > tmp_n
+	if (!(*stack_a)->next->next && tmp > tmp_n)
+		ft_swap_a(stack_a, 0);
+	else if (tmp > tmp_n
 		&& tmp < *(int *)(*stack_a)->next->next->content)
 		ft_swap_a(stack_a, 0);
 	else if (tmp > *(int *)(*stack_a)->next->next->content
