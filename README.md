@@ -6,7 +6,7 @@
 
 A stack sorting algorithm project implementing radix sort with two stacks (A and B), featuring efficient number sorting with constrained operations.
 
-![Push_Swap Operations](https://raw.githubusercontent.com/Nazar963/push_swap/main/images/demo.gif)
+![Push_Swap Operations](https://raw.githubusercontent.com/Nazar963/42_push_swap/main/images/demo.gif)
 
 ## Table of Contents 📖
 - [Project Overview](#project-overview)
